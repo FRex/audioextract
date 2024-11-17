@@ -71,13 +71,13 @@ def main():
                 "copy",
                 outname,
             ]
-            print(args)
+            # print(args)
             subprocess.run(args, check=True)
             outsize = os.path.getsize(outname)
 
             # NOTE: newline is to part a bit away from output of stdout and stderr of ffmpeg
             print(
-                f"\nConverted {pa} to {outname} from {prettysize(pasize)} to {prettysize(outsize)} aka {100.0 * outsize / pasize:.2f}%"
+                f"\nConverted {pa} to {outname} from {prettysize(pasize)} to {prettysize(outsize)} aka {100.0 * outsize / pasize:.2f}%\n"
             )
             break  # TODO: dont break after one stream but extract all audios? hmm...
 
